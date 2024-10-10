@@ -30,4 +30,6 @@ CREATE TABLE IF NOT EXISTS password (
   PRIMARY KEY (website_url, user_id, password)
 );
 
+SET block_encryption_mode = 'aes-256-cbc';
+
 source commands.sql;
