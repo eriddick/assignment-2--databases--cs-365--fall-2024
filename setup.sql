@@ -17,17 +17,19 @@ CREATE TABLE IF NOT EXISTS website (
 
 CREATE TABLE IF NOT EXISTS user (
   website_url VARCHAR(128)  NOT NULL,
-  user_id     SMALLINT(5)  NOT NULL,
   user_name   VARCHAR(128) NOT NULL,
-  PRIMARY KEY (website_url, user_id)
+  fisrt_name  VARCHAR(128) NOT NULL,
+  last_name   VARCHAR(128) NOT NULL,
+  email       VARCHAR(128) NOT NULL,
+  PRIMARY KEY (website_url, user_name)
 );
 
 CREATE TABLE IF NOT EXISTS password (
   website_url  VARCHAR(128)  NOT NULL,
-  user_id      SMALLINT(5)  NOT NULL,
+  user_name    VARCHAR(128)  NOT NULL,
   password     VARBINARY(512) NOT NULL,
-  timestamp    DECIMAL(5,2) NOT NULL,
-  PRIMARY KEY (website_url, user_id, password)
+  timestamp    DATETIME,
+  PRIMARY KEY (website_url, user_name, password)
 );
 
 SET block_encryption_mode = 'aes-256-cbc';
