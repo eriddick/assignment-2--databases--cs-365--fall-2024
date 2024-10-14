@@ -16,26 +16,27 @@ VALUES
 
 INSERT INTO user
 VALUES
-  ("https://www.youtube.com", 1234, "greenwick"),
-  ("https://www.blackboard.hartford.edu", 5678, "jdoe"),
-  ("https://www.wikipedia.com", 9012, "janesmith"),
-  ("https://www.github.com", 3456, "octocat"),
-  ("https://www.facebook.com", 7890, "fb_user123"),
-  ("https://www.twitter.com", 2345, "bird"),
-  ("https://www.linkedin.com", 6789, "pro_networker"),
-  ("https://www.instagram.com", 1122, "jdog"),
-  ("https://www.reddit.com", 3344, "redditor_expert"),
-  ("https://www.netflix.com", 5566, "binge_watcher");
+  ("https://www.youtube.com", "graywick", "Gray", "Wick", "graywick@example.com"),
+  ("https://www.blackboard.hartford.edu", "jdoe", "John", "Doe", "jdoe@hartford.edu"),
+  ("https://www.wikipedia.com", "janesmith", "Jane", "Smith", "janesmith@example.com"),
+  ("https://www.github.com", "octocat", "Owen", "Coud", "octocat@github.com"),
+  ("https://www.facebook.com", "fb_user123", "Frank", "Uso", "fb_user123@facebook.com"),
+  ("https://www.twitter.com", "bird", "Joe", "Bird", "bird@twitter.com"),
+  ("https://www.linkedin.com", "pro_networker", "Mike", "Evan", "pro_networker@linkedin.com"),
+  ("https://www.instagram.com", "jdog", "J", "Dog", "jdog@instagram.com"),
+  ("https://www.reddit.com", "redditor_expert", "Reddit", "Expert", "redditor_expert@reddit.com"),
+  ("https://www.netflix.com", "binge_watcher", "Binge", "Watcher", "binge_watcher@netflix.com");
 
 INSERT INTO password
 VALUES
-  ("https://www.youtube.com", 1234, AES_ENCRYPT('door5497', @key_str, @init_vector), 328.12),
-  ("https://www.blackboard.hartford.edu", 5678, AES_ENCRYPT('classroom99', @key_str, @init_vector), 450.65),
-  ("https://www.wikipedia.com", 9012, AES_ENCRYPT('g62^43pl', @key_str, @init_vector), 512.00),
-  ("https://www.github.com", 3456, AES_ENCRYPT('james007', @key_str, @init_vector), 760.30),
-  ("https://www.facebook.com", 7890, AES_ENCRYPT('fbuser987', @key_str, @init_vector), 105.50),
-  ("https://www.twitter.com", 2345, AES_ENCRYPT('tw33t890', @key_str, @init_vector), 220.40),
-  ("https://www.linkedin.com", 6789, AES_ENCRYPT('lulo0909', @key_str, @init_vector), 340.75),
-  ("https://www.instagram.com", 1122, AES_ENCRYPT('sol20$f', @key_str, @init_vector), 150.80),
-  ("https://www.reddit.com", 3344, AES_ENCRYPT('losttime2', @key_str, @init_vector), 190.20),
-  ("https://www.netflix.com", 5566, AES_ENCRYPT('strangerthings', @key_str, @init_vector), 450.90);
+  ("https://www.youtube.com", "graywick", AES_ENCRYPT('door5497', @key_str, @init_vector), '2024-10-03 12:43:03'),
+  ("https://www.blackboard.hartford.edu", "jdoe", AES_ENCRYPT('classroom99', @key_str, @init_vector), '2024-10-03 18:23:53'),
+  ("https://www.wikipedia.com", "janesmith", AES_ENCRYPT('g62^43pl', @key_str, @init_vector), '2024-10-05 7:22:18'),
+  ("https://www.github.com", "octocat", AES_ENCRYPT('james007', @key_str, @init_vector), '2024-10-06 12:53:10'),
+  ("https://www.facebook.com", "fb_user123", AES_ENCRYPT('fbuser987', @key_str, @init_vector), '2024-10-08 14:12:33'),
+  ("https://www.twitter.com", "bird", AES_ENCRYPT('tw33t890', @key_str, @init_vector), '2024-10-10 14:30:34'),
+  ("https://www.linkedin.com", "pro_networker", AES_ENCRYPT('lulo0909', @key_str, @init_vector), '2024-10-11 12:00:58'),
+  ("https://www.instagram.com", "jdog", AES_ENCRYPT('sol20$f', @key_str, @init_vector), '2024-10-11 13:03:10'),
+  ("https://www.reddit.com", "redditor_expert", AES_ENCRYPT('losttime2', @key_str, @init_vector), '2024-10-12 06:21:24'),
+  ("https://www.netflix.com", "binge_watcher", AES_ENCRYPT('strangerthings', @key_str, @init_vector), '2024-10-12 16:43:46');
+
