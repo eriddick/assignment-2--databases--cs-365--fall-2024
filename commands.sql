@@ -40,3 +40,35 @@ VALUES
   ("https://www.reddit.com", "redditor_expert", AES_ENCRYPT('losttime2', @key_str, @init_vector), '2024-10-12 06:21:24'),
   ("https://www.netflix.com", "binge_watcher", AES_ENCRYPT('strangerthings', @key_str, @init_vector), '2024-10-12 16:43:46');
 
+
+INSERT INTO website VALUES ("Walmart", "https://www.walmart.com");
+INSERT INTO user VALUES ("https://www.walmart.com", "doorman", "Ben", "Andrews", "bandrews@mail.com");
+INSERT INTO password
+VALUES ("https://www.walmart.com", "doorman", AES_ENCRYPT('concate85%^8', @key_str, @init_vector), '2024-10-14 10:01:23');
+
+
+select CONVERT(AES_DECRYPT(password, @key_str, @init_vector) USING 'utf8') AS plain_text_password
+from password
+WHERE website_url = "https://www.twitter.com";
+
+
+SELECT website_url, user_name, CONVERT(AES_DECRYPT(password, @key_str, @init_vector) USING 'utf8') AS plain_text_password,
+timestamp FROM password WHERE website_url LIKE '%https%';
+
+
+UPDATE password SET website_url = "https://www.x.com" WHERE website_url = "https://www.twitter.com";
+
+
+UPDATE password SET password = AES_ENCRYPT('newPaSsWoRd', @key_str, @init_vector)
+WHERE password = AES_ENCRYPT('g62^43pl', @key_str, @init_vector);
+
+
+DELETE FROM password WHERE website_url = "https://www.github.com";
+DELETE FROM user WHERE website_url = "https://www.github.com";
+DELETE FROM website WHERE website_url = "https://www.github.com";
+
+
+SELECT website_url FROM password WHERE password = AES_ENCRYPT('door5497', @key_str, @init_vector);
+DELETE FROM password WHERE password = AES_ENCRYPT('door5497', @key_str, @init_vector);
+DELETE FROM user WHERE website_url = "https://www.youtube.com";
+DELETE FROM website WHERE website_url = "https://www.youtube.com";
